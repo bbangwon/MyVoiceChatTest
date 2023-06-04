@@ -6,9 +6,12 @@ public class MuteController : MonoBehaviour
     [SerializeField]
     Text muteDetectedText;
 
+    [SerializeField]
+    Toggle muteToggle;
+
     public void OnMuteSwitchChanged(bool mute)
     {
-        AudioListener.pause = mute;
+        muteToggle.isOn = mute;
 
         muteDetectedText.text = $"Mute Detected : {mute}";    
     }
